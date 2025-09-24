@@ -1,0 +1,19 @@
+---
+title: "Cómo crear gráficos de distribución de edades"
+author: "Herbert Lizama"
+format: pdf
+---
+Las liberías que usaremos en este archivo son:
+```{python}
+import pandas as pd
+import numpy as np
+
+```
+
+
+# Datos
+Primero necesitamos cargar los datos y estructurarlos de la siguiente manera:
+```{python}
+datos = pd.read_csv("poblacion2020.csv")
+datos.head()
+```
