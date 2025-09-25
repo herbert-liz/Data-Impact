@@ -1,0 +1,14 @@
+project: 
+  type: website
+  output-dir: docs
+
+website:
+  title: "Data Impact"
+  navbar: 
+    left:
+      - text: "Inicio"
+        href: index.qmd
+      - text: "Python"
+        menu: 
+          - text: "Pirámide poblacional"
+            href: "/Proyectos python/Distribución edades/Cómo hacer un gráfico de edades.qmd"
