@@ -1,14 +1,17 @@
-project: 
+project:
   type: website
   output-dir: docs
 
 website:
   title: "Data Impact"
-  navbar: 
+  navbar:
     left:
-      - text: "Inicio"
-        href: index.qmd
-      - text: "Python"
-        menu: 
-          - text: "Pirámide poblacional"
-            href: "proyectos-python/distribucion-edades/guia-piramide-poblacional.qmd"
+      - href: index.qmd
+        text: Inicio
+      - href: posts/
+        text: Blog
+
+format:
+  html:
+    theme: cosmo
+    toc: false

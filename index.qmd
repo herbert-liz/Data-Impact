@@ -1,19 +1,30 @@
 ---
-title: "Data Impact: Proyectos de R y Python"
-format: html
+title: "Herbert Lizama"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
 ---
 
-# Bienvenido a Data Impact
+# Bienvenido
 
-¡Hola! Soy Herbert Lizama y aquí comparto mis proyectos de **R** y **Python** que publico en mi página de [Instagram](https://www.instagram.com/data.impact/).
+¡Hola! Soy Herbert Lizama y aquí comparto mis proyectos de **R** y **Python** que publico en mi página de [Instagram](https://www.instagram.com/data.impact/) y [YouTube](https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ).
 
 ## Sobre mí
 
 Apasionado por el análisis de datos, la visualización y la ciencia de datos aplicada. En este sitio encontrarás ejemplos, tutoriales y proyectos prácticos.
 
-## Sígueme
+Soy actuario de profesión y me encanta enseñar y compartir conocimientos. Actualmente estoy estudiando la maestría en ciencia de datos por parte del INFOTEC. Me dedico a la ciencia de datos desde 2021 y he trabajado en proyectos de análisis de datos, modelado predictivo y visualización interactiva.
 
-Para más contenido, sígueme en [YouTube: Herbert Lizama](https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ).
+## Sígueme
+Si te interesa mi contenido, puedes apoyarme siguiendome en mis redes sociales:
+
+- [Instagram: data.impact](https://www.instagram.com/data.impact/)
+- [LinkedIn: Herbert Lizama](https://www.linkedin.com/in/herbert-lizama/)
+- [GitHub: herbertlizama](https://github.com/herbert-lizama)
+- [YouTube: Herbert Lizama](https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ)
 
 ---
 

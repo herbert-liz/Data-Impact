@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Impact: Proyectos de R y Python – Data Impact</title>
+<title>Herbert Lizama – Data Impact</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -38,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-79108a0fc1995748cbd19a5b0e3e3e7c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,11 +68,69 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -91,17 +151,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Python</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
-        <li>
-    <a class="dropdown-item" href="./proyectos-python/distribucion-edades/guia-piramide-poblacional.html">
- <span class="dropdown-text">Pirámide poblacional</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./posts/"> 
+<span class="menu-text">Blog</span></a>
   </li>  
-    </ul>
-  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -113,13 +166,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Impact: Proyectos de R y Python</h1>
+<h1 class="title">Herbert Lizama</h1>
 </div>
 
 
@@ -136,24 +190,66 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bienvenido-a-data-impact" class="level1">
-<h1>Bienvenido a Data Impact</h1>
-<p>¡Hola! Soy Herbert Lizama y aquí comparto mis proyectos de <strong>R</strong> y <strong>Python</strong> que publico en mi página de <a href="https://www.instagram.com/data.impact/">Instagram</a>.</p>
+<section id="bienvenido" class="level1">
+<h1>Bienvenido</h1>
+<p>¡Hola! Soy Herbert Lizama y aquí comparto mis proyectos de <strong>R</strong> y <strong>Python</strong> que publico en mi página de <a href="https://www.instagram.com/data.impact/">Instagram</a> y <a href="https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ">YouTube</a>.</p>
 <section id="sobre-mí" class="level2">
 <h2 class="anchored" data-anchor-id="sobre-mí">Sobre mí</h2>
 <p>Apasionado por el análisis de datos, la visualización y la ciencia de datos aplicada. En este sitio encontrarás ejemplos, tutoriales y proyectos prácticos.</p>
+<p>Soy actuario de profesión y me encanta enseñar y compartir conocimientos. Actualmente estoy estudiando la maestría en ciencia de datos por parte del INFOTEC. Me dedico a la ciencia de datos desde 2021 y he trabajado en proyectos de análisis de datos, modelado predictivo y visualización interactiva.</p>
 </section>
 <section id="sígueme" class="level2">
 <h2 class="anchored" data-anchor-id="sígueme">Sígueme</h2>
-<p>Para más contenido, sígueme en <a href="https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ">YouTube: Herbert Lizama</a>.</p>
+<p>Si te interesa mi contenido, puedes apoyarme siguiendome en mis redes sociales:</p>
+<ul>
+<li><a href="https://www.instagram.com/data.impact/">Instagram: data.impact</a></li>
+<li><a href="https://www.linkedin.com/in/herbert-lizama/">LinkedIn: Herbert Lizama</a></li>
+<li><a href="https://github.com/herbert-lizama">GitHub: herbertlizama</a></li>
+<li><a href="https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ">YouTube: Herbert Lizama</a></li>
+</ul>
 <hr>
 <p>¿Quieres colaborar o tienes alguna pregunta? ¡Contáctame!</p>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1758607200000" data-listing-file-modified-sort="1758864930209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1485">
+<div class="thumbnail">
+<p><a href="./posts/2025-09-25-distribucion-edades/index.html" class="no-external"></a></p><a href="./posts/2025-09-25-distribucion-edades/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2025-09-25-distribucion-edades/index_files/figure-html/cell-6-output-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2025-09-25-distribucion-edades/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-09-25-distribucion-edades/index.html" class="no-external">Gráfico distribución de edades - Pirámide poblacional</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2025-09-25-distribucion-edades/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/2025-09-25-distribucion-edades/index.html" class="no-external">En este documento te mostraré como crear el gráfico de distribución poblacional conocido como <em>pirámide poblacional</em>. Este tipo de gráfico es útil para visualizar la…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-09-25-distribucion-edades/index.html" class="no-external">
+<div class="listing-date">
+Sep 23, 2025
+</div>
+<div class="listing-author">
+Herbert Lizama
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

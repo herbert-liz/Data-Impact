@@ -190,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Cuadrículas para múltiples gráficos</li>
 </ul>
 <p>Las liberías que usaremos en este archivo son:</p>
-<div id="84051e7c" class="cell" data-execution_count="1">
+<div id="5e432c89" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="datos" class="level2">
 <h2 class="anchored" data-anchor-id="datos">Datos</h2>
 <p>Para este ejercicio, usaremos datos de población por edad y sexo del Censo de Población y Vivienda 2020 del INEGI. <a href="https://www.inegi.org.mx/app/tabulados/interactivos/?pxq=Poblacion_Poblacion_01_e60cd8cf-927f-4b94-823e-972457a12d4b&amp;idrt=123&amp;opc=t"><em>Fuente</em></a>.</p>
-<div id="818c818c" class="cell" data-execution_count="2">
+<div id="fc2b3d87" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> pd.read_csv(<span class="st">"poblacion2020.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>datos.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -276,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Total:</strong> contiene el número total de personas (hombres + mujeres) en cada grupo de edad y estado.</li>
 </ul>
 <p>Por temas de visualización que veremos más adelante, convertimos en valores negativos los datos de población de hombres (o mujeres, según se prefiera):</p>
-<div id="201ea202" class="cell" data-execution_count="3">
+<div id="9d00a438" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>datos[<span class="st">'Hombres'</span>] <span class="op">=</span> <span class="op">-</span>datos[<span class="st">'Hombres'</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>datos.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -345,12 +345,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="gráfico-básico" class="level2">
 <h2 class="anchored" data-anchor-id="gráfico-básico">Gráfico básico</h2>
 <p>Primero crearemos un gráfico básico para visualizar la pirámide poblacional de México. Filtramos los datos para obtener solo los registros correspondientes a “Estados Unidos Mexicanos”, además de eliminar el grupo de edad “Total”:</p>
-<div id="85758bcd" class="cell" data-execution_count="4">
+<div id="7c3b5b24" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>datos_mexico <span class="op">=</span> datos[datos[<span class="st">'Entidad'</span>] <span class="op">==</span> <span class="st">'Estados Unidos Mexicanos'</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>datos_mexico <span class="op">=</span> datos_mexico[datos_mexico[<span class="st">'GrupoEdad'</span>] <span class="op">!=</span> <span class="st">'Total'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A continuación, creamos el gráfico base usando seaborn:</p>
-<div id="fd5252f8" class="cell" data-execution_count="5">
+<div id="389192b6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">10.8</span>, <span class="fl">10.8</span>), dpi<span class="op">=</span><span class="dv">100</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.barplot(x<span class="op">=</span><span class="st">'Hombres'</span>, y<span class="op">=</span><span class="st">'GrupoEdad'</span>, data<span class="op">=</span>datos_mexico, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Hombres'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.barplot(x<span class="op">=</span><span class="st">'Mujeres'</span>, y<span class="op">=</span><span class="st">'GrupoEdad'</span>, data<span class="op">=</span>datos_mexico, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Mujeres'</span>)</span>
@@ -363,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="guia-piramide-poblacional_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="mejoras-visuales">Mejoras visuales</h2>
 <p>Una de las ventajas de usar Seaborn es la facilidad con la que se pueden personalizar los gráficos. Esto se logra mediante la función <code>set_style</code>, que permite definir varios aspectos visuales del gráfico.</p>
 <p>A continuación, crearemos una función para aplicar un estilo personalizado a nuestros gráficos:</p>
-<div id="70977f61" class="cell" data-execution_count="6">
+<div id="5d751659" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> set_seaborn_style(font_family, background_color, grid_color, text_color):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    sns.set_style({</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"axes.facecolor"</span>: background_color,</span>
@@ -410,7 +410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Para aplicar este estilo a nuestros gráficos, simplemente llamamos a la función antes de crear cualquier gráfico y definimos los parámetros deseados.</p>
 <p>Ten en cuenta que todos las gráficos creados después de llamar a esta función adoptarán el estilo definido. Si deseas volver al estilo predeterminado de Seaborn, puedes usar <code>sns.reset_defaults()</code> o <code>sns.reset_orig()</code>.</p>
 <p>Apliquemos la función a nuestra pirámide poblacional para observar las mejoras:</p>
-<div id="9c01e99d" class="cell" data-execution_count="7">
+<div id="36ebde4b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>set_seaborn_style(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"PT Mono"</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    background_color<span class="op">=</span><span class="st">"#253D5B"</span>,</span>
@@ -433,7 +433,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="guia-piramide-poblacional_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -444,14 +444,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="mejoras-informativas">Mejoras informativas</h2>
 <p>Ahora que el gráfico luce mejor, es momento de hacer que sea más informativo. Particularmente, daremos formato al eje x, de tal forma que los valores aparezcan en miles (K), millones (M) o porcentaje (%), según sea el caso.</p>
 <p>Primero, veamos los valores actuales del eje x (los extremos no se grafican, por lo que no nos interean):</p>
-<div id="22660c58" class="cell" data-execution_count="8">
+<div id="9a15b825" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ax.get_xticks()[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array([-6000000., -4000000., -2000000.,        0.,  2000000.,  4000000.])</code></pre>
 </div>
 </div>
 <p>Aunque los valores aparecen completos, la gráfica por defecto los muetra en notación científica, lo cual no es muy amigable para el lector. Para mejorar esto, crearemos una función que genere las etiquetas del eje x en el formato deseado:</p>
-<div id="fdff2453" class="cell" data-execution_count="9">
+<div id="698c750a" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_x_labels(ax, formato):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> formato <span class="op">==</span> <span class="st">"millones"</span>:</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="st">"</span><span class="sc">{}</span><span class="st">M"</span>.<span class="bu">format</span>(<span class="bu">round</span>(<span class="bu">abs</span>(x <span class="op">/</span> <span class="dv">1000000</span>))) <span class="cf">for</span> x <span class="kw">in</span> ax.get_xticks()[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]]</span>
@@ -462,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>La función <code>create_x_labels</code> toma dos argumentos: el objeto <code>ax</code> del gráfico y el formato deseado para las etiquetas. Dependiendo del formato especificado (“millones”, “miles” o “porcentaje”), la función devuelve una lista de etiquetas formateadas adecuadamente.</p>
 <p>Apliquemos esta función a nuestro gráfico de pirámide poblacional:</p>
-<div id="e68b55b8" class="cell" data-execution_count="10">
+<div id="9adfbf44" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>set_seaborn_style(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"PT Mono"</span>,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    background_color<span class="op">=</span><span class="st">"#253D5B"</span>,</span>
@@ -483,7 +483,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="guia-piramide-poblacional_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -493,7 +493,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="porcentaje-de-población" class="level2">
 <h2 class="anchored" data-anchor-id="porcentaje-de-población">Porcentaje de población</h2>
 <p>Otra forma útil de visualizar la pirámide poblacional es mediante porcentajes en lugar de números absolutos. Esto permite comparar la distribución de edades entre diferentes poblaciones o estados sin importar el tamaño total de la población. Para lograr esto, primero calculamos el porcentaje de hombres y mujeres en cada grupo de edad con respecto al total nacional:</p>
-<div id="77a6106f" class="cell" data-execution_count="11">
+<div id="f0930cd7" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>total_poblacion <span class="op">=</span> <span class="op">-</span>datos_mexico[<span class="st">'Hombres'</span>].<span class="bu">sum</span>() <span class="op">+</span> datos_mexico[<span class="st">'Mujeres'</span>].<span class="bu">sum</span>()</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>datos_mexico[<span class="st">'ptg_Hombres'</span>] <span class="op">=</span> (datos_mexico[<span class="st">'Hombres'</span>] <span class="op">/</span> total_poblacion)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>datos_mexico[<span class="st">'ptg_Mujeres'</span>] <span class="op">=</span> (datos_mexico[<span class="st">'Mujeres'</span>] <span class="op">/</span> total_poblacion)</span>
@@ -573,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Ahora, creamos el gráfico de pirámide poblacional usando los porcentajes calculados:</p>
-<div id="e4a69d06" class="cell" data-execution_count="12">
+<div id="773f567f" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>set_seaborn_style(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"PT Mono"</span>,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    background_color<span class="op">=</span><span class="st">"#253D5B"</span>,</span>
@@ -594,7 +594,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="guia-piramide-poblacional_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -604,7 +604,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="agregar-etiqueta-a-cada-barra">Agregar etiqueta a cada barra</h2>
 <p>Finalmente, para mejorar aún más la información proporcionada por el gráfico, podemos agregar etiquetas a cada barra que indiquen el valor exacto representado.</p>
 <p>Esto es especialmente útil cuando se desea resaltar ciertos datos específicos o cuando el gráfico se presenta en un contexto donde los detalles son importantes. Para agregar estas etiquetas, podemos usar la función <code>text</code> de Matplotlib dentro de un bucle que recorra cada barra del gráfico. Aquí te muestro cómo hacerlo:</p>
-<div id="3128b364" class="cell" data-execution_count="13">
+<div id="b85b9e86" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>set_seaborn_style(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"PT Mono"</span>,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    background_color<span class="op">=</span><span class="st">"#253D5B"</span>,</span>
@@ -639,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="guia-piramide-poblacional_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
