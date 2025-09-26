@@ -11,4 +11,4 @@ website:
       - text: "Python"
         menu: 
           - text: "Pirámide poblacional"
-            href: "/Proyectos python/Distribución edades/Cómo hacer un gráfico de edades.qmd"
+            href: "proyectos-python/distribucion-edades/guia-piramide-poblacional.qmd"
