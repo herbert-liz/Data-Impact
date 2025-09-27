@@ -1,14 +1,11 @@
 ---
-title: "Herbert Lizama"
+title: "Bienvenido"
 listing:
   contents: posts
   sort: "date desc"
   type: default
   categories: true
-  feed: true
 ---
-
-# Bienvenido
 
 ¡Hola! Soy Herbert Lizama y aquí comparto mis proyectos de **R** y **Python** que publico en mi página de [Instagram](https://www.instagram.com/data.impact/) y [YouTube](https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ).
 
@@ -25,7 +22,3 @@ Si te interesa mi contenido, puedes apoyarme siguiendome en mis redes sociales:
 - [LinkedIn: Herbert Lizama](https://www.linkedin.com/in/herbert-lizama/)
 - [GitHub: herbertlizama](https://github.com/herbert-lizama)
 - [YouTube: Herbert Lizama](https://www.youtube.com/channel/UCU5MNQV6OPd4r9quPcHaXjQ)
-
----
-
-¿Quieres colaborar o tienes alguna pregunta? ¡Contáctame!

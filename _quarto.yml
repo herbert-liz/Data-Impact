@@ -3,12 +3,10 @@ project:
   output-dir: docs
 
 website:
-  title: "Data Impact"
+  title: "Herbert Lizama"
   navbar:
     left:
-      - href: index.qmd
-        text: Inicio
-      - href: posts/
+      - href: posts/index.qmd
         text: Blog
 
 format:
